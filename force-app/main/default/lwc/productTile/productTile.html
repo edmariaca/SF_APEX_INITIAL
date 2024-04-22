@@ -1,0 +1,17 @@
+<template>
+    <div style="width:50%;border:1px solid rgb(0, 163, 14);">
+        <lightning-card title={consultor.Name}>
+
+            <!-- <lightning-button slot="actions" onclick={nota_consultor} aria-haspopup="dialog" label="Nota"
+                id={consultor.Id}>
+            </lightning-button> -->
+            <lightning-button-icon icon-name="utility:record_update"  variant="brand" alternative-text="Nota" slot="actions" id={consultor.Id} onclick={nota_consultor} aria-haspopup="dialog"></lightning-button-icon>
+
+            <p class="slds-p-horizontal_small">Consultor: {consultor.Name}</p>
+            <p class="slds-p-horizontal_small">Correo: {consultor.correo__c}</p>
+            <p class="slds-p-horizontal_small">Escolaridad: {consultor.escolaridad__c}</p>
+            <p class="slds-p-horizontal_small">Ingreso a la empresa: {consultor.ingreso__c}</p>
+            <p slot="footer">NetW 2024</p>
+        </lightning-card>
+    </div>
+</template>

@@ -1,0 +1,24 @@
+<template>
+    <!-- <lightning-card title={dataconsultores.Name}>
+        <lightning-button label="Ver Consultor" slot="actions"></lightning-button>
+        <p class="slds-p-horizontal_small">{dataconsultores.Cargo}</p>
+        <img class="img_consultor slds-align_absolute-center" src={srcConsultor} alt={dataconsultores.Name}>
+        <p slot="footer">{dataconsultores.Ciudad}</p>
+    </lightning-card> -->
+
+    <div class="slds-card slds-var-p-around_x-small">
+        <h3>Lista de {ListaMostrada}</h3>
+        <template lwc:if={consultores}>
+            <div class="content">
+                <template for:each={consultores.data} for:item="consultor">
+                    <c-product-tile key={consultor.Id} consultor={consultor} class="slds-var-m-around_x-small">
+                    </c-product-tile>
+                </template>
+            </div>
+
+        </template>
+        <template lwc:else>
+            <p>No existen consultores creados</p>
+        </template>
+    </div>
+</template>

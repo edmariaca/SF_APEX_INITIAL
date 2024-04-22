@@ -1,0 +1,37 @@
+<template>
+    <lightning-modal-header label="Agregar nota al consultor"></lightning-modal-header>
+    <lightning-modal-body>
+        <div lwc:if={guardando}>
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                Agregar Nota:
+            </h2>
+            <div class="slds-m-top_medium slds-m-bottom_x-large">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input type="text" name="titulo_crear" label="Titulo Nota" value={titulo_crear} onchange={genericOnChange}></lightning-input>
+    
+                    <lightning-textarea label="Detalla la nota" placeholder="Escribe aqui..." value={nota_crear}
+                    name="nota_crear" onchange={genericOnChange}></lightning-textarea>
+    
+                </div>
+                <div class="slds-m-top_small slds-m-bottom_medium">
+                    <lightning-button variant="success" label="Guardar" title="Guardar" onclick={btnSaveNota}
+                        class="slds-m-left_x-small"></lightning-button>
+                </div>
+    
+            </div>
+        </div>
+        <div lwc:else>
+            <div class="exampleHolder">
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </div>
+        </div>
+
+        <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            Historial:
+        </h2>
+        <div style="height: 300px;">
+            <lightning-datatable key-field="id" data={data} columns={columns}>
+            </lightning-datatable>
+        </div>
+    </lightning-modal-body>
+</template>

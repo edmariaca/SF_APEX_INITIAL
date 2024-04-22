@@ -1,0 +1,17 @@
+<template>
+    <div class="slds-card slds-var-p-around_x-small">
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                Consulta del consultor
+            </h2>
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input type="email" label="Correo electronico" placeholder="Correo electronico" onchange={handleInputChange}></lightning-input>
+            </div>
+        </div>
+    
+        <div class="slds-m-top_small slds-m-bottom_medium">
+            <lightning-button variant="success" label="Consultar" title="Successful action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+        </div>
+        <h1>{NombreConsultado}</h1>
+    </div>
+</template>
